@@ -1,5 +1,5 @@
-# ordermanagement
-The Order Management backend service will establish a connection to the Order-Management frontend service to fetch orders data.
+# order-service
+The Order service, a backend microservice, will integrate with the Order-Application frontend service. This integration enables the Order service to retrieve order data from the frontend service, facilitating data exchange and enabling the backend to fulfill order-related functionalities.
 
 1. Java 23
 2. Spring Boot 3.4.1
