@@ -1,14 +1,11 @@
 # Use an official OpenJDK runtime as a parent image
 FROM openjdk:23-jdk
 
-# Set the working directory in the container
-WORKDIR /app
+# Expose port 1212 to the outside world
+EXPOSE 1212
 
-# Copy the current directory contents into the container at /app
-COPY . /app
-
-# Expose port 8080 to the outside world
-EXPOSE 8080
+# Add the application's jar to the container
+ADD target/ordermanagement.jar ordermanagement.jar
 
 # Run the application
-CMD ["java", "-jar", "ordermanagement.jar"]
+ENTRYPOINT ["java", "-jar", "/ordermanagement.jar"]

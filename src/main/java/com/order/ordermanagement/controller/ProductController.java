@@ -36,37 +36,15 @@ public class ProductController {
 		return productService.findAllProducts();
 	}
 
+	@GetMapping("/test")
+	public String test() {
+		return "Test Success";
+	}
+
 	@GetMapping("/{id}")
 	public Optional<ProductEntity> findProductById(@PathVariable Long id) {
 		return productService.findProductById(id);
 	}
-
-	/*
-	 * @GetMapping("/barcode") public static void barcode() { try {
-	 * 
-	 * String text =
-	 * "{\"id\":2,\"name\":\"ibney\",\"address\":\"India\",\"gender\":\"Male\",\"age\":\"35\",\"married\":true}";
-	 * String path = "D:\\Barcode\\barcode.jpg";
-	 * 
-	 * Code128Writer writer = new Code128Writer(); BitMatrix matrix =
-	 * writer.encode(text, BarcodeFormat.CODE_128, 300, 200);
-	 * 
-	 * MatrixToImageWriter.writeToPath(matrix, "jpg", Paths.get(path));
-	 * 
-	 * System.out.println("Barcode created...");
-	 * 
-	 * } catch (Exception e) { System.out.println("Error while creating barcode"); }
-	 * }
-	 */
-	
-//	@GetMapping("/barcode")
-//	public static BufferedImage generateEAN13BarcodeImage() throws Exception {
-//	    EAN13Writer barcodeWriter = new EAN13Writer();
-//	    String str = "{\"id\":1,\"name\":\"ibney\",\"gender\":\"Male\",\"Married\":\"yes\"}";
-//	    BitMatrix bitMatrix = barcodeWriter.encode(str, BarcodeFormat.EAN_13, 300, 150);
-//
-//	    return MatrixToImageWriter.toBufferedImage(bitMatrix);
-//	}
 	
 	@Autowired
     private BarcodeGenerator barcodeService;

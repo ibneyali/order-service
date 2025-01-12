@@ -1,0 +1,7 @@
+services:
+  order-service:
+    image: ordermanagement
+    ports:
+      - "8989:8989"
+    environment:
+      - SPRING_DATA_MONGODB_URI=mongodb+srv://admin:admin@cluster0.fo657.mongodb.net/orders
